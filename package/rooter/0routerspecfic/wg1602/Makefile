@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=wg1602
 PKG_VERSION:=1.000
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_MAINTAINER:=Created by DM/makefile by Cobia@whirlpool
 include $(INCLUDE_DIR)/package.mk
@@ -14,6 +14,9 @@ define Package/wg1602
   SECTION:=utils
   CATEGORY:=ROOter
   SUBMENU:=Router Specific
+  DEPENDS:=+kmod-mt7615e +kmod-mt76 +kmod-mt7603 +kmod-mt7615-firmware \
+		+kmod-mt7663-firmware-ap +kmod-mt7663-firmware-sta \
+		+kmod-mt76x2
   TITLE:=Install scripts for WG1602
   PKGARCH:=all
 endef
